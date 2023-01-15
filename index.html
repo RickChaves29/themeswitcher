@@ -7,6 +7,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Theme Switcher</title>
     <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
         body {
             display: flex;
             justify-content: center;
@@ -51,17 +57,17 @@
         let btnToggle = document.getElementById("btn")
         let isDarkTheme = window.localStorage.getItem("isDarkTheme")
         console.log(isDarkTheme)
-        if (isDarkTheme == "" || isDarkTheme == null) {
+        if (isDarkTheme == null) {
             document.body.style.backgroundColor = "#292C35"
-            btnToggle.style.left = "75px"
+            btnToggle.style.left = "65px"
         }
         btnToggle.addEventListener("click", () => {
-            if (btnToggle.style.left == "75px") {
+            if (btnToggle.style.left == "65px") {
                 btnToggle.style.left = "5px"
                 window.localStorage.setItem("isDarkTheme", "5px")
                 document.body.style.backgroundColor = "#F1F1F1"
             } else {
-                btnToggle.style.left = "75px"
+                btnToggle.style.left = "65px"
                 window.localStorage.clear()
                 document.body.style.backgroundColor = "#292C35"
             }
